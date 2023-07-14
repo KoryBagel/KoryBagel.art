@@ -15,25 +15,20 @@
     <link rel="manifest" href="assets/00icon/site.webmanifest">
 
     <!-- og embed info-->
-    <meta name="description" content="discover the unique and captivating world of Kory Bagel’s level design and 3D work">
     <meta name="theme-color" content="#5200d5">
-    <meta property="og:title" content="KoryBagel portfolio">
-    <meta property="og:site_name" content="Korybagel">
-    <meta property="og:url" content="https://korybagel.art">
-    <meta property="og:type" content="website">
     <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://korybagel.art">
+    <meta property="og:url" content="https://www.korybagel.art">
     <meta property="og:type" content="website">
     <meta property="og:title" content="KoryBagel portfolio">
     <meta property="og:description" content="discover the unique and captivating world of Kory Bagel's level design and 3D work">
-    <meta property="og:image" content="https://korybagel.art/assets/og_thumbnail.jpg">
+    <meta property="og:image" content="/assets/og_thumbnail_1.jpg">
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="korybagel.art">
-    <meta property="twitter:url" content="https://korybagel.art">
+    <meta property="twitter:domain" content="www.korybagel.art">
+    <meta property="twitter:url" content="https://www.korybagel.art">
     <meta name="twitter:title" content="KoryBagel portfolio">
     <meta name="twitter:description" content="discover the unique and captivating world of Kory Bagel's level design and 3D work">
-    <meta name="twitter:image" content="https://korybagel.art/assets/og_thumbnail.jpg">
+    <meta name="twitter:image" content="/assets/og_thumbnail_1.jpg">
 
 
 </head>
@@ -54,8 +49,8 @@
             <br>
             <span>
             <a href="https://sketchfab.com/KoryBagel"><img src="assets\svg\sketchfab-logo-white.svg" class="icon"></a>
-            <a href="https://www.youtube.com/channel/UCTFwqV6ZxkqsTzNPfn0pmjQ"> <img src="assets\svg\YouTube-Icon-White-Logo.wine.svg" class="icon"></a>
-            <a href="https://steamcommunity.com/id/KoryBagel"> <img src="assets\svg\steam_logo_white.svg" class="icon"></a>
+            <a href="https://www.youtube.com/channel/UCTFwqV6ZxkqsTzNPfn0pmjQ"><img src="assets\svg\YouTube-Icon-White-Logo.wine.svg" class="icon"></a>
+            <a href="https://steamcommunity.com/id/KoryBagel"><img src="assets\svg\steam_logo_white.svg" class="icon"></a>
             </span>
             <h2 class="align_bottom"><span class="bop_up">&#8639;</span><span class="bop_down">&#x21C2;</span></h2>
             <h3 class="align_bottom_text">scroll down</h3>
@@ -77,37 +72,37 @@
                 <!-- Full-width images with number and caption text -->
                 <div class="Sakura_slides">
                     <div class="numbertext">1 / 6</div>
-                    <img src="assets/SAKURA/1.jpg" style="height:100%">
+                    <img src="assets/SAKURA/1_Small.jpg" data-src="assets/SAKURA/1.jpg" class="lazy-image" style="height:100%">
                     <div class="text">Bombsite A</div>
                 </div>
 
                 <div class="Sakura_slides">
                     <div class="numbertext">2 / 6</div>
-                    <img src="assets/SAKURA/2.jpg" style="height:100%">
+                    <img src="assets/SAKURA/2_Small.jpg" data-src="assets/SAKURA/2.jpg" class="lazy-image" style="height:100%">
                     <div class="text">CT-spawn outlook</div>
                 </div>
 
                 <div class="Sakura_slides">
                     <div class="numbertext">3 / 6</div>
-                    <img src="assets/SAKURA/3.jpg" style="height:100%">
+                    <img src="assets/SAKURA/3_Small.jpg" data-src="assets/SAKURA/3.jpg" class="lazy-image" style="height:100%">
                     <div class="text">Back alley</div>
                 </div>
 
                 <div class="Sakura_slides">
                     <div class="numbertext">4 / 6</div>
-                    <img src="assets/SAKURA/4.jpg" style="height:100%">
+                    <img src="assets/SAKURA/4_Small.jpg" data-src="assets/SAKURA/4.jpg" class="lazy-image" style="height:100%">
                     <div class="text">T-spawn outlook</div>
                 </div>
 
                 <div class="Sakura_slides">
                     <div class="numbertext">5 / 6</div>
-                    <img src="assets/SAKURA/5.jpg" style="height:100%">
+                    <img src="assets/SAKURA/5_Small.jpg" data-src="assets/SAKURA/5.jpg" class="lazy-image" style="height:100%">
                     <div class="text">Laundrymat</div>
                 </div>
 
                 <div class="Sakura_slides">
                     <div class="numbertext">6 / 6</div>
-                    <img src="assets/SAKURA/6.jpg" style="height:100%">
+                    <img src="assets/SAKURA/6_Small.jpg" data-src="assets/SAKURA/6.jpg" class="lazy-image" style="height:100%">
                     <div class="text">CT-side back alley</div>
                 </div>
 
@@ -258,7 +253,7 @@
 
         <!--slideshow script-->
         <script>
-            let slideIndex = [1, 1, 1, 1, ];
+            let slideIndex = [1, 1, 1, 1];
             let slideId = ["Cliffside_slides", "Sakura_slides", "RADIO_slides", "hexe_slides"];
             showSlides(1, 0);
             showSlides(1, 1);
@@ -282,6 +277,37 @@
                     x[i].style.display = "none";
                 }
                 x[slideIndex[no] - 1].style.display = "block";
+            }
+            //lazy load script
+
+            document.addEventListener("DOMContentLoaded", function() {
+                var observerOptions = {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.6 // treshold for loading images
+                };
+
+                var observer = new IntersectionObserver(handleIntersect, observerOptions);
+                var lazyImages = document.querySelectorAll(".lazy-image");
+
+                lazyImages.forEach(function(lazyImage) {
+                    observer.observe(lazyImage);
+                });
+            });
+
+            function handleIntersect(entries, observer) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        var currentDiv = entry.target.closest(".body_left");
+                        var lazyImages = currentDiv.querySelectorAll(".lazy-image");
+
+                        lazyImages.forEach(function(lazyImage) {
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImage.classList.remove("lazy-image");
+                            observer.unobserve(lazyImage);
+                        });
+                    }
+                });
             }
         </script>
     </div>

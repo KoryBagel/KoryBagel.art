@@ -27,6 +27,11 @@
                     /*icon css styling */
                     
                     .icon {
+                        -webkit-user-select: none;
+                        /* Safari */
+                        -ms-user-select: none;
+                        /* IE 10 and IE 11 */
+                        user-select: none;
                         filter: brightness(1000%) saturate(0%);
                         height: 2.5vw;
                         width: 2.5vw;
@@ -35,11 +40,21 @@
                     }
                     
                     .icon:hover {
+                        -webkit-user-select: none;
+                        /* Safari */
+                        -ms-user-select: none;
+                        /* IE 10 and IE 11 */
+                        user-select: none;
                         display: inline-block;
                         filter: brightness(100%);
                     }
                     
                     .icon-container {
+                        -webkit-user-select: none;
+                        /* Safari */
+                        -ms-user-select: none;
+                        /* IE 10 and IE 11 */
+                        user-select: none;
                         display: inline;
                     }
                     /*body styling */
@@ -66,6 +81,11 @@
                     /*bop anims*/
                     
                     .bop_up {
+                        -webkit-user-select: none;
+                        /* Safari */
+                        -ms-user-select: none;
+                        /* IE 10 and IE 11 */
+                        user-select: none;
                         animation: bop-up 1s ease-out infinite alternate;
                     }
                     
@@ -79,6 +99,11 @@
                     }
                     
                     .bop_down {
+                        -webkit-user-select: none;
+                        /* Safari */
+                        -ms-user-select: none;
+                        /* IE 10 and IE 11 */
+                        user-select: none;
                         animation: bop_down 1s ease-out infinite alternate;
                     }
                     
@@ -131,6 +156,11 @@
                     }
                     
                     .align_bottom_text {
+                        -webkit-user-select: none;
+                        /* Safari */
+                        -ms-user-select: none;
+                        /* IE 10 and IE 11 */
+                        user-select: none;
                         font-family: Roboto;
                         font-weight: 50;
                         color: #868686;
@@ -424,6 +454,11 @@
                     .Sakura_slides,
                     .RADIO_slides,
                     .hexe_slides {
+                        -webkit-user-select: none;
+                        /* Safari */
+                        -ms-user-select: none;
+                        /* IE 10 and IE 11 */
+                        user-select: none;
                         position: absolute;
                         top: 0;
                         left: 0;
