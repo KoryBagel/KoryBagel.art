@@ -129,25 +129,25 @@
                 <!-- Full-width images with number and caption text -->
                 <div class="hexe_slides">
                     <div class="numbertext">1 / 4</div>
-                    <img src="assets/HEXE/0.png" style="height:100%">
+                    <img src="assets/HEXE/0_Small.png" data-src="assets/HEXE/0.png" class="lazy-image" style="height:100%">
                     <div class="text">Campsite</div>
                 </div>
 
                 <div class="hexe_slides">
                     <div class="numbertext">2 / 4</div>
-                    <img src="assets/HEXE/3.png" style="height:100%">
+                    <img src="assets/HEXE/3_Small.png" data-src="assets/HEXE/3.png" class="lazy-image" style="height:100%">
                     <div class="text">Skeleton fight</div>
                 </div>
 
                 <div class="hexe_slides">
                     <div class="numbertext">3 / 4</div>
-                    <img src="assets/HEXE/2.png" style="height:100%">
+                    <img src="assets/HEXE/2_Small.png" data-src="assets/HEXE/2.png" class="lazy-image" style="height:100%">
                     <div class="text">Loot chests</div>
                 </div>
 
                 <div class="hexe_slides">
                     <div class="numbertext">4 / 4</div>
-                    <img src="assets/HEXE/1.png" style="height:100%">
+                    <img src="assets/HEXE/1_Small.png" data-src="assets/HEXE/1.png" class="lazy-image" style="height:100%">
                     <div class="text">Death screen</div>
                 </div>
                 <!-- Next and previous buttons -->
@@ -175,25 +175,25 @@
 
                 <div class="Cliffside_slides">
                     <div class="numbertext">1 / 4</div>
-                    <img src="assets/CLIFFSIDE/2.jpg" style="height:100%">
+                    <img src="assets/CLIFFSIDE/2_Small.jpg" data-src="assets/CLIFFSIDE/2.jpg" class="lazy-image" style="height:100%">
                     <div class="text">Waterfall outlook</div>
                 </div>
 
                 <div class="Cliffside_slides">
                     <div class="numbertext">2 / 4</div>
-                    <img src="assets/CLIFFSIDE/1.jpg" style="height:100%">
+                    <img src="assets/CLIFFSIDE/1_Small.jpg" data-src="assets/CLIFFSIDE/1.jpg" class="lazy-image" style="height:100%">
                     <div class="text">Interior Caves</div>
                 </div>
 
                 <div class="Cliffside_slides">
                     <div class="numbertext">3 / 4</div>
-                    <img src="assets/CLIFFSIDE/3.jpg" style="height:100%">
+                    <img src="assets/CLIFFSIDE/3_Small.jpg" data-src="assets/CLIFFSIDE/3.jpg" class="lazy-image" style="height:100%">
                     <div class="text">Ruins interior</div>
                 </div>
 
                 <div class="Cliffside_slides">
                     <div class="numbertext">4 / 4</div>
-                    <img src="assets/CLIFFSIDE/4.jpg" style="height:100%">
+                    <img src="assets/CLIFFSIDE/4_Small.jpg" data-src="assets/CLIFFSIDE/4.jpg" class="lazy-image" style="height:100%">
                     <div class="text">Cliffside view</div>
                 </div>
 
@@ -220,25 +220,25 @@
                 <!-- Full-width images with number and caption text -->
                 <div class="RADIO_slides">
                     <div class="numbertext">1 / 4</div>
-                    <img src="assets/RADIO/1.jpg" style="height:100%">
+                    <img src="assets/RADIO/1_Small.jpg" data-src="assets/RADIO/1.jpg" class="lazy-image" style="height:100%">
                     <div class="text">Radio tower</div>
                 </div>
 
                 <div class="RADIO_slides">
                     <div class="numbertext">2 / 4</div>
-                    <img src="assets/RADIO/2.jpg" style="height:100%">
+                    <img src="assets/RADIO/2_Small.jpg" data-src="assets/RADIO/2.jpg" class="lazy-image" style="height:100%">
                     <div class="text">Player side arena</div>
                 </div>
 
                 <div class="RADIO_slides">
                     <div class="numbertext">3 / 4</div>
-                    <img src="assets/RADIO/3.jpg" style="height:100%">
+                    <img src="assets/RADIO/3_Small.jpg" data-src="assets/RADIO/3.jpg" class="lazy-image" style="height:100%">
                     <div class="text">Out of Bounds Overlook</div>
                 </div>
 
                 <div class="RADIO_slides">
                     <div class="numbertext">4 / 4</div>
-                    <img src="assets/RADIO/4.jpg" style="height:100%">
+                    <img src="assets/RADIO/4_Small.jpg" data-src="assets/RADIO/4.jpg" class="lazy-image" style="height:100%">
                     <div class="text">Spawn outlook</div>
                 </div>
 
@@ -250,66 +250,7 @@
 
             </div>
         </section>
-
-        <!--slideshow script-->
-        <script>
-            let slideIndex = [1, 1, 1, 1];
-            let slideId = ["Cliffside_slides", "Sakura_slides", "RADIO_slides", "hexe_slides"];
-            showSlides(1, 0);
-            showSlides(1, 1);
-            showSlides(1, 2);
-            showSlides(1, 3);
-
-            function plusSlides(n, no) {
-                showSlides(slideIndex[no] += n, no);
-            }
-
-            function showSlides(n, no) {
-                let i;
-                let x = document.getElementsByClassName(slideId[no]);
-                if (n > x.length) {
-                    slideIndex[no] = 1;
-                }
-                if (n < 1) {
-                    slideIndex[no] = x.length;
-                }
-                for (i = 0; i < x.length; i++) {
-                    x[i].style.display = "none";
-                }
-                x[slideIndex[no] - 1].style.display = "block";
-            }
-            //lazy load script
-
-            document.addEventListener("DOMContentLoaded", function() {
-                var observerOptions = {
-                    root: null,
-                    rootMargin: '0px',
-                    threshold: 0.6 // treshold for loading images
-                };
-
-                var observer = new IntersectionObserver(handleIntersect, observerOptions);
-                var lazyImages = document.querySelectorAll(".lazy-image");
-
-                lazyImages.forEach(function(lazyImage) {
-                    observer.observe(lazyImage);
-                });
-            });
-
-            function handleIntersect(entries, observer) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        var currentDiv = entry.target.closest(".body_left");
-                        var lazyImages = currentDiv.querySelectorAll(".lazy-image");
-
-                        lazyImages.forEach(function(lazyImage) {
-                            lazyImage.src = lazyImage.dataset.src;
-                            lazyImage.classList.remove("lazy-image");
-                            observer.unobserve(lazyImage);
-                        });
-                    }
-                });
-            }
-        </script>
+        <script src="script.js"></script>
     </div>
 </body>
 
