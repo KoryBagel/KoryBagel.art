@@ -55,3 +55,16 @@
          }
      });
  }
+
+ //parallax scrolling script
+ document.addEventListener("DOMContentLoaded", function() {
+     var parallaxImages = document.querySelectorAll('.parallax-image');
+
+     window.addEventListener("scroll", function() {
+         parallaxImages.forEach(function(image) {
+             var scrollPosition = window.scrollY;
+             var translateY = scrollPosition * 10; // Adjust the factor for the desired parallax effect
+             image.style.transform = 'translateY(' + translateY + 'px)';
+         });
+     });
+ });
